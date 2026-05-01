@@ -533,8 +533,9 @@
                 </div>
                 <div class="field">
                     <input type="tel" name="phone" id="f-phone" placeholder=" "
-                           pattern="^(\+62|62|0)8[0-9]{8,11}$" required
-                           inputmode="tel" autocomplete="tel" aria-describedby="hint-phone">
+                           pattern="^\+?[\d\s\-().]{7,20}$" required
+                           inputmode="tel" autocomplete="tel" aria-describedby="hint-phone"
+                           title="Nomor telepon 7-15 digit, boleh awali +kodenegara (cth: +6281234567890, 081234567890, +14155551234)">
                     <label for="f-phone">No. Telepon</label>
                     <small class="field-hint" id="hint-phone" data-for="f-phone" aria-live="polite"></small>
                 </div>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhamad Yuga Hidayat — JavaScript-Stack Developer | Portfolio</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Portfolio Muhamad Yuga Hidayat — JavaScript-Stack Developer dari Palembang. Membangun website dan aplikasi web responsif dengan HTML, CSS, JavaScript, Node.js, Express, dan MongoDB.">
+    <meta name="keywords" content="Yuga, Muhamad Yuga Hidayat, web developer, JavaScript developer, frontend, backend, Palembang, portfolio, Node.js, Express, MongoDB">
+    <meta name="author" content="Muhamad Yuga Hidayat">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0bb121" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f97316" media="(prefers-color-scheme: light)">
+
+    <!-- Open Graph (Facebook / WhatsApp / LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Muhamad Yuga Hidayat — JavaScript-Stack Developer">
+    <meta property="og:description" content="Portfolio web developer dari Palembang. Lihat karya, skill, dan pengalaman saya.">
+    <meta property="og:image" content="assets/img/hero/santai.jpg">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Muhamad Yuga Hidayat — Portfolio">
+    <meta name="twitter:description" content="JavaScript-Stack Developer dari Palembang.">
+    <meta name="twitter:image" content="assets/img/hero/santai.jpg">
+
+    <!-- Favicon (inline SVG with letter Y, fallback for hero photo) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230bb121'/%3E%3Ctext x='50%25' y='54%25' font-family='Poppins,Arial,sans-serif' font-size='40' font-weight='800' fill='white' text-anchor='middle' dominant-baseline='middle'%3EY%3C/text%3E%3Ccircle cx='52' cy='50' r='5' fill='%2315e039'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="assets/img/hero/santai.jpg">
+
+    <link rel="stylesheet" href="assets/css/pstyle.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- Mobile menu backdrop -->
+    <div class="menu-backdrop" id="menu-backdrop" aria-hidden="true"></div>
+
+    <!-- Section dots indicator (mobile) -->
+    <nav class="section-dots" id="section-dots" aria-label="Section navigation">
+        <a href="#phome" data-section="phome" aria-label="Beranda"></a>
+        <a href="#pservices" data-section="pservices" aria-label="Layanan"></a>
+        <a href="#pskill" data-section="pskill" aria-label="Skill"></a>
+        <a href="#pendidikan" data-section="pendidikan" aria-label="Pendidikan"></a>
+        <a href="#pengalaman" data-section="pengalaman" aria-label="Projects"></a>
+        <a href="#contact" data-section="contact" aria-label="Contact"></a>
+    </nav>
+
+    <!-- Mobile FAB WhatsApp -->
+    <a href="https://wa.me/6287780313222" target="_blank" rel="noopener" class="mobile-fab" aria-label="Chat via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader-ring"></div>
+        <p class="loader-text">Yuga<span>.</span></p>
+    </div>
+
+    <!-- Sticky social bar -->
+    <aside class="social-sticky" id="social-sticky" aria-label="Social media">
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.instagram.com/yuga_saja/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/6287780313222" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    </aside>
+
+    <a class="skip-link" href="#phome">Lewati ke konten</a>
+
+    <!-- Animated background blobs -->
+    <div class="bg-decor" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+    </div>
+
+    <header class="pheader" id="pheader">
+        <a href="#phome" class="plogo">Yuga<span>.</span></a>
+        <i class="fa-solid fa-bars" id="pmenu-icon"></i>
+        <nav class="pnavbar">
+            <a href="#phome" class="nav-link active">Beranda</a>
+            <a href="#pservices" class="nav-link">Layanan</a>
+            <a href="#pskill" class="nav-link">Skill</a>
+            <a href="#pendidikan" class="nav-link">Pendidikan</a>
+            <a href="#pengalaman" class="nav-link">Pengalaman</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="phome" id="phome">
+        <div class="particles" id="particles" aria-hidden="true"></div>
+        <!-- Scene decor: extra constellations + comet (dark) | birds + clouds (light) -->
+        <div class="scene-decor scene-hero" aria-hidden="true">
+            <div class="galaxy-decor">
+                <div class="star-field"></div>
+                <div class="aurora aurora-1"></div>
+                <div class="moon"></div>
+                <div class="planet planet-1"></div>
+                <div class="constellation constellation-1"></div>
+                <div class="constellation constellation-2"></div>
+                <div class="constellation constellation-3"></div>
+                <div class="comet comet-1"></div>
+                <div class="satellite satellite-1"></div>
+            </div>
+            <div class="morning-decor">
+                <div class="sun"></div>
+                <div class="bird bird-1"></div>
+                <div class="bird bird-2"></div>
+                <div class="bird bird-3"></div>
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="cloud cloud-3"></div>
+                <div class="butterfly butterfly-1"></div>
+                <div class="butterfly butterfly-2"></div>
+                <div class="mountain-back"></div>
+                <div class="tree-line"></div>
+            </div>
+        </div>
+        <div class="phome-content" data-reveal>
+            <p class="hello-tag"><span class="dot"></span> Halo, selamat datang</p>
+            <span class="available-badge"><span class="ping"></span> Available for new projects</span>
+            <h1>Hi, It's <span class="shimmer">Yuga</span></h1>
+            <h3 class="ptyping-text">I'm a <span></span></h3>
+            <p id="pisi-p">Saya adalah seorang JavaScript-Stack Developer yang berpengalaman dalam mengembangkan website dari sisi front-end hingga back-end. Dengan keahlian dalam HTML, CSS, JavaScript, serta database dan server, saya siap membangun aplikasi yang responsif, efisien, dan berkualitas tinggi.</p>
+
+            <div class="psocial-icon">
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://youtube.com/@yugaadvance3078?si=8Intkj5T7OHkukRr" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/yuga_saja/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/yuga.otaku/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#contact" class="btn">Hire Me</a>
+                <a href="#pengalaman" class="btn btn-ghost">Lihat Karya <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="phome-img" data-reveal>
+            <div class="img-ring"></div>
+            <div class="hero-orbit hero-orbit-1" aria-hidden="true"></div>
+            <div class="hero-orbit hero-orbit-2" aria-hidden="true"></div>
+            <img src="assets/img/hero/santai.jpg" alt="Foto Yuga" id="hero-photo" decoding="async" fetchpriority="high">
+        </div>
+        <a href="#stats" class="scroll-indicator" aria-label="Scroll down">Scroll</a>
+    </section>
+
+    <!-- Stats / Counter -->
+    <section class="stats-section" id="stats">
+        <div class="stats-grid">
+            <div class="stat-item" data-reveal>
+                <i class="fa-solid fa-calendar-check stat-icon"></i>
+                <div class="stat-number" data-count="1">0</div>
+                <p>Tahun Pengalaman</p>
+            </div>
+            <div class="stat-item" data-reveal>
+                <i class="fa-solid fa-folder-open stat-icon"></i>
+                <div class="stat-number" data-count="5">0</div>
+                <p>Proyek Selesai</p>
+            </div>
+            <div class="stat-item" data-reveal>
+                <i class="fa-solid fa-face-smile stat-icon"></i>
+                <div class="stat-number" data-count="2">0</div>
+                <p>Klien Senang</p>
+            </div>
+            <div class="stat-item" data-reveal>
+                <i class="fa-solid fa-code stat-icon"></i>
+                <div class="stat-number" data-count="1">0</div>
+                <p>Tech Stack</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech marquee strip -->
+    <div class="tech-marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span><i class="fa-brands fa-html5"></i> HTML5</span>
+            <span><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span><i class="fa-brands fa-node-js"></i> Node.js</span>
+            <span><i class="fa-solid fa-database"></i> MongoDB</span>
+            <span><i class="fa-brands fa-git-alt"></i> Git</span>
+            <span><i class="fa-brands fa-figma"></i> Figma</span>
+            <span><i class="fa-solid fa-server"></i> Express</span>
+            <span><i class="fa-brands fa-html5"></i> HTML5</span>
+            <span><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+            <span><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span><i class="fa-brands fa-node-js"></i> Node.js</span>
+            <span><i class="fa-solid fa-database"></i> MongoDB</span>
+            <span><i class="fa-brands fa-git-alt"></i> Git</span>
+            <span><i class="fa-brands fa-figma"></i> Figma</span>
+            <span><i class="fa-solid fa-server"></i> Express</span>
+        </div>
+    </div>
+
+    <section class="pservices" id="pservices">
+        <!-- Decor: pulsar + meteors + ring + constellations [dark] | wind + petals + sparkles [light] -->
+        <div class="scene-decor scene-services" aria-hidden="true">
+            <div class="galaxy-decor">
+                <div class="saturn-ring saturn-ring-mini-1"></div>
+                <div class="constellation constellation-1"></div>
+                <div class="constellation constellation-2"></div>
+                <div class="pulsar"></div>
+                <div class="meteor meteor-1"></div>
+                <div class="meteor meteor-2"></div>
+                <div class="meteor meteor-3"></div>
+            </div>
+            <div class="morning-decor">
+                <div class="wind wind-1"></div>
+                <div class="wind wind-2"></div>
+                <div class="wind wind-3"></div>
+                <div class="petal petal-1"></div>
+                <div class="petal petal-2"></div>
+                <div class="petal petal-3"></div>
+                <div class="petal petal-4"></div>
+                <div class="sparkle sparkle-1"></div>
+                <div class="sparkle sparkle-2"></div>
+                <div class="sparkle sparkle-3"></div>
+                <div class="bee bee-1"></div>
+                <div class="bee bee-2"></div>
+                <div class="hills-line"></div>
+            </div>
+        </div>
+        <span class="section-eyebrow" data-reveal>What I Do</span>
+        <h2 class="pheading" data-reveal>My<span>Services</span></h2>
+        <div class="pservices-container">
+            <div class="pservices-box tilt" data-reveal>
+                <i class="fa-solid fa-code service-icon"></i>
+                <div class="pservices-info">
+                    <h4>DOM Manipulation</h4>
+                    <p>DOM manipulation memungkinkan pengembang mengubah elemen HTML secara dinamis dengan JavaScript untuk menciptakan antarmuka web interaktif dan responsif.</p>
+                </div>
+            </div>
+            <div class="pservices-box tilt" data-reveal>
+                <i class="fa-solid fa-laptop-code service-icon"></i>
+                <div class="pservices-info">
+                    <h4>Frontend Development</h4>
+                    <p>Front-end development adalah proses membangun tampilan website menggunakan HTML, CSS, dan JavaScript agar responsif, interaktif, dan nyaman digunakan.</p>
+                </div>
+            </div>
+            <div class="pservices-box tilt" data-reveal>
+                <i class="fa-solid fa-pen-ruler service-icon"></i>
+                <div class="pservices-info">
+                    <h4>UI / UX Design</h4>
+                    <p>UI/UX design adalah proses merancang tampilan dan pengalaman pengguna agar website atau aplikasi lebih menarik, mudah digunakan, dan intuitif.</p>
+                </div>
+            </div>
+            <div class="pservices-box tilt" data-reveal>
+                <i class="fa-solid fa-database service-icon"></i>
+                <div class="pservices-info">
+                    <h4>Database Management</h4>
+                    <p>Database Management adalah proses mengelola, menyimpan, dan mengamankan data menggunakan sistem seperti MySQL, PostgreSQL, atau MongoDB agar tetap terorganisir dan efisien.</p>
+                </div>
+            </div>
+            <div class="pservices-box tilt" data-reveal>
+                <i class="fa-solid fa-cloud-arrow-down service-icon"></i>
+                <div class="pservices-info">
+                    <h4>API Fetch</h4>
+                    <p>API fetch adalah metode JavaScript untuk mengambil data dari server secara asinkron, memungkinkan interaksi data real-time dalam aplikasi web.</p>
+                </div>
+            </div>
+            <div class="pservices-box tilt" data-reveal>
+                <i class="fa-solid fa-server service-icon"></i>
+                <div class="pservices-info">
+                    <h4>Backend Development</h4>
+                    <p>Back-end development adalah proses membangun server, database, dan logika aplikasi menggunakan bahasa seperti Python, Node.js, atau PHP untuk mendukung fungsionalitas sistem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pskill" id="pskill">
+        <!-- Decor: black hole + galaxy spiral + 3 constellations [dark] | airplanes + sun rays + butterflies [light] -->
+        <div class="scene-decor scene-skills" aria-hidden="true">
+            <div class="galaxy-decor">
+                <div class="black-hole"></div>
+                <div class="galaxy-spiral"></div>
+                <div class="constellation constellation-1"></div>
+                <div class="constellation constellation-2"></div>
+                <div class="constellation constellation-3"></div>
+                <div class="shooting-star shooting-star-1"></div>
+                <div class="galaxy-cluster galaxy-cluster-1"></div>
+                <div class="satellite satellite-1"></div>
+            </div>
+            <div class="morning-decor">
+                <div class="sun-rays"></div>
+                <div class="plane"><i class="fa-solid fa-plane" aria-hidden="true"></i></div>
+                <div class="plane plane-2"><i class="fa-solid fa-plane" aria-hidden="true"></i></div>
+                <div class="butterfly butterfly-1"></div>
+                <div class="butterfly butterfly-2"></div>
+                <div class="bamboo-grove"></div>
+                <div class="windmill"></div>
+                <div class="firefly firefly-1"></div>
+                <div class="firefly firefly-2"></div>
+                <div class="firefly firefly-3"></div>
+                <div class="grass-tuft"></div>
+            </div>
+        </div>
+        <span class="section-eyebrow" data-reveal>What I Know</span>
+        <h2 class="pheading" data-reveal>My<span>Skills</span></h2>
+        <div class="pcontainer" data-reveal>
+            <div class="prow" id="pskillcontainer">
+                <div class="pbar"><div class="pinfo"><img id="logo-html-img" src="assets/img/skills/html-logo.png" alt="HTML" loading="lazy" decoding="async"><span>HTML</span><div class="bar-track"><div class="bar-fill" data-level="95"></div></div></div></div>
+                <div class="pbar"><div class="pinfo"><img id="logo-css-img" src="assets/img/skills/css-logo.png" alt="CSS" loading="lazy" decoding="async"><span>CSS</span><div class="bar-track"><div class="bar-fill" data-level="90"></div></div></div></div>
+                <div class="pbar"><div class="pinfo"><img id="logo-js-img" src="assets/img/skills/js-logo.png" alt="JavaScript" loading="lazy" decoding="async"><span>JavaScript</span><div class="bar-track"><div class="bar-fill" data-level="100"></div></div></div></div>
+                <div class="pbar"><div class="pinfo"><img id="logo-node-js-img" src="assets/img/skills/node-js-logo.png" alt="NodeJS" loading="lazy" decoding="async"><span>NodeJS</span><div class="bar-track"><div class="bar-fill" data-level="30"></div></div></div></div>
+                <div class="pbar"><div class="pinfo"><img id="logo-exp-js-img" src="assets/img/skills/express-js-logo.png" alt="ExpressJS" loading="lazy" decoding="async"><span>ExpressJS</span><div class="bar-track"><div class="bar-fill" data-level="25"></div></div></div></div>
+                <div class="pbar"><div class="pinfo"><img id="logo-mongo-db-img" src="assets/img/skills/mongodb-logo.png" alt="MongoDB" loading="lazy" decoding="async"><span>MongoDB</span><div class="bar-track"><div class="bar-fill" data-level="50"></div></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pendidikan" id="pendidikan">
+        <!-- Decorative scene layer (galaxy in dark mode / morning in light mode) -->
+        <div class="scene-decor" aria-hidden="true">
+            <!-- Galaxy elements (dark mode) -->
+            <div class="galaxy-decor">
+                <div class="moon moon-edu"></div>
+                <div class="saturn-ring saturn-ring-1"></div>
+                <div class="saturn-ring saturn-ring-2"></div>
+                <div class="saturn-ring saturn-ring-3"></div>
+                <div class="comet comet-1"></div>
+                <div class="comet comet-2"></div>
+                <div class="comet comet-3"></div>
+                <div class="comet comet-4"></div>
+                <div class="comet comet-5"></div>
+                <div class="galaxy-cluster galaxy-cluster-1"></div>
+            </div>
+            <!-- Morning elements (light mode) -->
+            <div class="morning-decor">
+                <div class="sun"></div>
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="cloud cloud-3"></div>
+                <div class="bird bird-1"></div>
+                <div class="bird bird-2"></div>
+                <div class="bird bird-3"></div>
+                <div class="rolling-hill"></div>
+                <div class="book-stack"></div>
+                <div class="pencil"></div>
+            </div>
+        </div>
+        <span class="section-eyebrow" data-reveal>My Journey</span>
+        <h2 class="pheading" data-reveal>My<span>Education</span></h2>
+        <div class="timeline">
+            <div class="container right" data-reveal>
+                <div class="content">
+                    <div class="tag">
+                        <img src="assets/img/education/universitas.png" alt="Lambang Universitas" class="school-logo universitas" loading="lazy" decoding="async">
+                        <h2>Universitas</h2>
+                    </div>
+                    <div class="decs">
+                        <p>Universitas Indo Global Mandiri Palembang - Jurusan S1 Sistem Informasi (2023-Sekarang)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container left" data-reveal>
+                <div class="content">
+                    <div class="tag">
+                        <img src="assets/img/education/madrasah.png" alt="Lambang Madrasah Aliyah" class="school-logo madrasah" loading="lazy" decoding="async">
+                        <h2>Madrasah Aliyah</h2>
+                    </div>
+                    <div class="decs">
+                        <p>Madrasah Aliyah Pondok Pesantren Sabilul Hasanah - MIA/IPA (2019-2022)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container right" data-reveal>
+                <div class="content">
+                    <div class="tag">
+                        <img src="assets/img/education/smp.png" alt="Lambang SMP" class="school-logo smp" loading="lazy" decoding="async">
+                        <h2>Sekolah Menengah Pertama</h2>
+                    </div>
+                    <div class="decs">
+                        <p>Sekolah Menengah Pertama Negeri 12 Palembang (2016-2019)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container left" data-reveal>
+                <div class="content">
+                    <div class="tag">
+                        <img src="assets/img/education/sd.png" alt="Lambang SD" class="school-logo sd" loading="lazy" decoding="async">
+                        <h2>Sekolah Dasar</h2>
+                    </div>
+                    <div class="decs">
+                        <p>Sekolah Dasar Negeri 203 Palembang (2010-2016)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengalaman / Projects -->
+    <section class="pengalaman" id="pengalaman">
+        <!-- Decor: nebula + asteroids + shooting star + galaxy + constellations + ring [dark] | rainbow + dandelion seeds + balloons [light] -->
+        <div class="scene-decor scene-projects" aria-hidden="true">
+            <div class="galaxy-decor">
+                <div class="saturn-ring saturn-ring-1"></div>
+                <div class="distant-galaxy"></div>
+                <div class="nebula nebula-1"></div>
+                <div class="constellation constellation-1"></div>
+                <div class="constellation constellation-2"></div>
+                <div class="constellation constellation-3"></div>
+                <div class="asteroid asteroid-1"></div>
+                <div class="asteroid asteroid-2"></div>
+                <div class="shooting-star shooting-star-1"></div>
+            </div>
+            <div class="morning-decor">
+                <div class="balloon balloon-1"></div>
+                <div class="balloon balloon-2"></div>
+                <div class="rainbow rainbow-1"></div>
+                <div class="dandelion dandelion-1"></div>
+                <div class="dandelion dandelion-2"></div>
+                <div class="dandelion dandelion-3"></div>
+                <div class="dandelion dandelion-4"></div>
+                <div class="flower-field"></div>
+            </div>
+        </div>
+        <span class="section-eyebrow" data-reveal>Recent Work</span>
+        <h2 class="pheading" data-reveal>My<span>Projects</span></h2>
+        <div class="projects-grid">
+            <article class="project-card tilt" data-reveal>
+                <div class="project-thumb">
+                    <img class="project-img" src="assets/img/projects/portfolio.png" alt="Personal Portfolio preview" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                    <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                    <div class="project-overlay">
+                        <a href="#" target="_blank" aria-label="Live demo"><i class="fa-solid fa-eye"></i></a>
+                        <a href="#" target="_blank" aria-label="Source code"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <h4>Personal Portfolio</h4>
+                    <p>Website portfolio responsif dengan animasi modern, scroll reveal, dan tema gelap dan terang.</p>
+                    <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                </div>
+            </article>
+            <article class="project-card tilt" data-reveal>
+                <div class="project-thumb">
+                    <img class="project-img" src="assets/img/projects/hydroplantura.png" alt="Mini E-Commerce preview" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                    <div class="project-overlay">
+                        <a href="https://hydroplantura.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Live demo"><i class="fa-solid fa-eye"></i></a>
+                        <a href="https://github.com/MUHAMADYUGAHIDAYAT/HydroPlantura" target="_blank" rel="noopener noreferrer" aria-label="Source code"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <h4>Mini E-Commerce</h4>
+                    <p>Aplikasi toko sederhana dengan keranjang, Api slug pakkasir, dan checkout flow.</p>
+                    <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                </div>
+            </article>
+            <article class="project-card tilt" data-reveal>
+                <div class="project-thumb">
+                    <img class="project-img" src="assets/img/projects/dashboard.jpg" alt="Dashboard Analitik preview" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                    <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                    <div class="project-overlay">
+                        <a href="#" target="_blank" aria-label="Live demo"><i class="fa-solid fa-eye"></i></a>
+                        <a href="#" target="_blank" aria-label="Source code"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <h4>Dashboard Analitik</h4>
+                    <p>Dashboard interaktif dengan grafik real-time dan filter dinamis berbasis DOM.</p>
+                    <div class="tags"><span>JS</span><span>Chart</span><span>API</span></div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <!-- Decor: crescent moon + small stars [dark] + paper plane / kite [light] -->
+        <div class="scene-decor scene-contact" aria-hidden="true">
+            <div class="galaxy-decor">
+                <div class="moon-crescent"></div>
+                <div class="constellation constellation-1"></div>
+                <div class="shooting-star shooting-star-1"></div>
+                <div class="galaxy-cluster galaxy-cluster-1"></div>
+            </div>
+            <div class="morning-decor">
+                <div class="paper-plane"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></div>
+                <div class="kite"></div>
+                <div class="lighthouse"></div>
+                <div class="beach-wave"></div>
+                <div class="boat"></div>
+                <div class="seagull seagull-1"></div>
+                <div class="seagull seagull-2"></div>
+            </div>
+        </div>
+        <span class="section-eyebrow" data-reveal>Get in Touch</span>
+        <h2 class="pheading" data-reveal>Contact<span>Me</span></h2>
+        <div class="contact-info" data-reveal>
+            <div class="contact-info-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h5>Email</h5>
+                <a href="mailto:yugaadvance@gmail.com">yugaadvance@gmail.com</a>
+            </div>
+            <div class="contact-info-card">
+                <i class="fa-solid fa-phone"></i>
+                <h5>Telepon</h5>
+                <a href="https://wa.me/6287780313222" target="_blank" rel="noopener noreferrer">+62 877-8031-3222</a>
+            </div>
+            <div class="contact-info-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h5>Lokasi</h5>
+                <span>Palembang, Indonesia</span>
+            </div>
+        </div>
+        <form id="contact-form" data-reveal novalidate>
+            <div class="input-box">
+                <div class="field">
+                    <input type="text" name="name" id="f-name" placeholder=" "
+                           pattern="^[A-Za-zÀ-ÿ' .\-]{3,50}$" minlength="3" maxlength="50" required
+                           autocomplete="name" aria-describedby="hint-name">
+                    <label for="f-name">Nama</label>
+                    <small class="field-hint" id="hint-name" data-for="f-name" aria-live="polite"></small>
+                </div>
+                <div class="field">
+                    <input type="email" name="email" id="f-email" placeholder=" "
+                           pattern="^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$" required
+                           autocomplete="email" aria-describedby="hint-email">
+                    <label for="f-email">Email</label>
+                    <small class="field-hint" id="hint-email" data-for="f-email" aria-live="polite"></small>
+                </div>
+                <div class="field">
+                    <input type="tel" name="phone" id="f-phone" placeholder=" "
+                           pattern="^(\+62|62|0)8[0-9]{8,11}$" required
+                           inputmode="tel" autocomplete="tel" aria-describedby="hint-phone">
+                    <label for="f-phone">No. Telepon</label>
+                    <small class="field-hint" id="hint-phone" data-for="f-phone" aria-live="polite"></small>
+                </div>
+                <div class="field">
+                    <input type="text" name="subject" id="f-subject" placeholder=" "
+                           minlength="3" maxlength="100" required
+                           aria-describedby="hint-subject">
+                    <label for="f-subject">Subjek</label>
+                    <small class="field-hint" id="hint-subject" data-for="f-subject" aria-live="polite"></small>
+                </div>
+            </div>
+            <div class="field" style="margin-top:1rem">
+                <textarea name="message" id="f-message" rows="6" placeholder=" "
+                          minlength="10" maxlength="1000" required
+                          aria-describedby="hint-message"></textarea>
+                <label for="f-message">Pesan Kamu</label>
+                <small class="field-hint" id="hint-message" data-for="f-message" aria-live="polite"></small>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn" id="submit-bae">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    <span>Kirim via Email</span>
+                </button>
+                <button type="button" class="btn btn-wa" id="submit-wa">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    <span>Kirim via WhatsApp</span>
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <footer class="pfooter">
+        <div class="pfooter-grid">
+            <div class="pfooter-brand">
+                <a href="#phome" class="pfooter-logo">Yuga<span>.</span></a>
+                <p>JavaScript-Stack Developer dari Palembang. Membangun website dan aplikasi web yang responsif, cepat, dan menyenangkan dipakai.</p>
+                <div class="pfooter-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/MUHAMADYUGAHIDAYAT" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/yuga_saja/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6287780313222" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h5>Navigasi</h5>
+                <ul class="pfooter-list">
+                    <li><a href="#phome">Beranda</a></li>
+                    <li><a href="#pservices">Layanan</a></li>
+                    <li><a href="#pskill">Skill</a></li>
+                    <li><a href="#pengalaman">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5>Kontak</h5>
+                <ul class="pfooter-list">
+                    <li><a href="mailto:yugaadvance@gmail.com">yugaadvance@gmail.com</a></li>
+                    <li><a href="https://wa.me/6287780313222" target="_blank" rel="noopener noreferrer">+62 877-8031-3222</a></li>
+                    <li><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Palembang, Indonesia</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pfooter-bottom">
+            <span>&copy; <span id="year"></span> Muhamad Yuga Hidayat</span>
+            <span class="pfooter-divider" aria-hidden="true">&bull;</span>
+            
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Toast container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

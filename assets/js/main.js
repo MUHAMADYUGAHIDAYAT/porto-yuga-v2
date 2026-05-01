@@ -1,7 +1,3 @@
-/* =========================================================
-   Portfolio Yuga — Interactive Behaviors
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
     const prefersReduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -207,10 +203,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const RECEIVER_EMAIL = "yugaadvance@gmail.com";
     const WA_NUMBER = "6287780313222";
 
+    // Strip separators (space, dash, dot, parentheses) from phone input before validation
+    // so '+62 812-3456-7890' or '(555) 123 4567' work naturally.
+    const normalizePhone = (s) => s.replace(/[\s\-().]/g, "");
+
     const VALIDATORS = {
         "f-name":    { regex: /^[A-Za-zÀ-ÿ' .\-]{3,50}$/,                          msg: "Nama 3-50 karakter (huruf saja)" },
         "f-email":   { regex: /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$/, msg: "Format email tidak valid (cth: nama@domain.com)" },
-        "f-phone":   { regex: /^(\+62|62|0)8[0-9]{8,11}$/,                         msg: "Nomor harus berawal 08/62/+62 dan total 11-13 digit" },
+        // International phone (E.164-style): optional '+' prefix + 7 to 15 digits.
+        // Accepts both domestic (08xxxxxxxx, 07xxx, etc.) and international (+62, +1, +44, ...).
+        "f-phone":   { regex: /^\+?[0-9]{7,15}$/, normalize: normalizePhone,       msg: "Nomor telepon tidak valid (7-15 digit, boleh awali +kodenegara)" },
         "f-subject": { regex: /^.{3,100}$/,                                        msg: "Subjek minimal 3 karakter" },
         "f-message": { regex: /^[\s\S]{10,1000}$/,                                  msg: "Pesan minimal 10 karakter, maks 1000" }
     };
@@ -221,13 +223,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const el = document.getElementById(id);
             const hint = form.querySelector(`.field-hint[data-for="${id}"]`);
             if (!el) return true;
-            const val = el.value.trim();
+            const raw = el.value.trim();
             const v = VALIDATORS[id];
-            if (!val && !el.required) {
+            if (!raw && !el.required) {
                 el.classList.remove("invalid", "valid");
                 if (hint) hint.textContent = "";
                 return true;
             }
+            // Optional per-field normalize (e.g. phone: strip spaces/dashes) before regex test
+            const val = v.normalize ? v.normalize(raw) : raw;
             const ok = !!val && v.regex.test(val);
             el.classList.toggle("invalid", !ok);
             el.classList.toggle("valid",   ok);
@@ -248,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const getData = () => ({
             name:    document.getElementById("f-name").value.trim(),
             email:   document.getElementById("f-email").value.trim(),
-            phone:   document.getElementById("f-phone").value.trim(),
+            phone:   normalizePhone(document.getElementById("f-phone").value.trim()), // send clean version
             subject: document.getElementById("f-subject").value.trim(),
             message: document.getElementById("f-message").value.trim()
         });
